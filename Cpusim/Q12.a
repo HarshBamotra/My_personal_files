@@ -1,0 +1,14 @@
+;Harsh Bamotra 
+;AC-1216
+;Program to add integers untill zero is given
+
+START: INP
+       JUMPZ  DONE
+       ADD    SUM
+       STA    SUM
+       JUMP   START
+DONE:  LDA    SUM
+       OUT
+       HLT
+
+SUM: .data 1 0

@@ -1,0 +1,15 @@
+;Harsh Bamotra 
+;AC-1216
+;Program to add integers until a negative
+;integer is given by the user.(excluding last)
+
+START: INP           ;Taking input
+       JUMPN  Done   ;Jumping if n<0
+       ADD    Sum    ;Adding the sum to AC
+       STA    Sum    ;Storing the new sum
+       JUMP   START  ;Jumping and taking the next number
+Done:  LDA    Sum    ;Loading the final sum
+       OUT           ;Printing the final sum
+       HLT           ;Halting the program
+
+Sum:    .data 2 0   ;Aloting and intialising the memory 
