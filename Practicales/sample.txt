@@ -1,0 +1,40 @@
+***** Details of the student *****
+Name ::Sam 
+Roll No. ::1
+Class ::12
+Year ::2021
+Total marks ::87
+**********************************
+
+***** Details of the student *****
+Name ::Ram lal
+Roll No. ::2
+Class ::12
+Year ::2021
+Total marks ::89
+**********************************
+
+***** Details of the student *****
+Name ::Sham lal
+Roll No. ::3
+Class ::12
+Year ::2021
+Total marks ::76
+**********************************
+
+***** Details of the student *****
+Name ::Harsh Bamotra
+Roll No. ::4
+Class ::12
+Year ::2021
+Total marks ::100
+**********************************
+
+***** Details of the student *****
+Name ::Ipshita Mahajan
+Roll No. ::5
+Class ::12
+Year ::2021
+Total marks ::100
+**********************************
+

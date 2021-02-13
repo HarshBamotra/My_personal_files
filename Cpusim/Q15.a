@@ -1,0 +1,7 @@
+;Harsh Bamotra
+;Program to add two integers in both direct and indirect addressing 
+
+INP         ;Taking input
+ADD 0 82    ;Adding the integers
+OUT         ;Giving output
+HLT         ;Halting the program

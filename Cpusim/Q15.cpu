@@ -75,7 +75,7 @@
 <!ATTLIST RAMWindowInfo ram IDREF #REQUIRED cellSize CDATA "1" top CDATA "50" left CDATA "50" width CDATA "450" height CDATA "450" contentsbase (Decimal|Binary|Hexadecimal|Ascii|UnsignedDec|Unicode) "Decimal" addressbase (Decimal|Binary|Hexadecimal) "Decimal">
 ]>
 
-<Machine name="Q14.cpu" >
+<Machine name="Q15.cpu" >
 	<!--............. Punctuation Options .............-->
 	<PunctChar char="!" use="symbol" />
 	<PunctChar char="#" use="symbol" />
@@ -107,35 +107,28 @@
 	<PunctChar char=";" use="comment" />
 
 	<!--......... machine instruction fields ............-->
-	<Field name="UNUSED" type="ignored" numBits="13" relativity="absolute" signed="true" defaultValue="0" id="model.Field69d46244">
-	</Field>
-	<Field name="I" type="required" numBits="1" relativity="absolute" signed="true" defaultValue="0" id="model.Field5f3fbe1b">
-	</Field>
-	<Field name="ADDRESS" type="required" numBits="12" relativity="absolute" signed="true" defaultValue="0" id="model.Field62fc5528">
-	</Field>
-	<Field name="OPCODE" type="required" numBits="3" relativity="absolute" signed="true" defaultValue="0" id="model.Field74606b71">
-	</Field>
+	<!-- none -->
 
 	<!--............. FileChannels .................-->
 	<!-- none -->
 
 	<!--............. registers .....................-->
-	<Register name="AC" width="16" initialValue="0" readOnly="false" id="model.module.Register3e6cf1fb" />
-	<Register name="AR" width="12" initialValue="0" readOnly="false" id="model.module.Register1c015f4b" />
-	<Register name="DR" width="16" initialValue="0" readOnly="false" id="model.module.Register1cd40cf6" />
-	<Register name="I" width="1" initialValue="0" readOnly="false" id="model.module.Register6b18d7fe" />
-	<Register name="IR" width="16" initialValue="0" readOnly="false" id="model.module.Register32a2004f" />
-	<Register name="PC" width="12" initialValue="0" readOnly="false" id="model.module.Register24cfea57" />
-	<Register name="S" width="3" initialValue="0" readOnly="false" id="model.module.Register18c0e184" />
+	<Register name="AC" width="16" initialValue="0" readOnly="false" id="model.module.Register6e508321" />
+	<Register name="AR" width="12" initialValue="0" readOnly="false" id="model.module.Register49298f6a" />
+	<Register name="DR" width="16" initialValue="0" readOnly="false" id="model.module.Register17df30fe" />
+	<Register name="I" width="1" initialValue="0" readOnly="false" id="model.module.Register4a1fce45" />
+	<Register name="IR" width="16" initialValue="0" readOnly="false" id="model.module.Register3cedc4c3" />
+	<Register name="PC" width="12" initialValue="0" readOnly="false" id="model.module.Register32a84a6f" />
+	<Register name="S" width="3" initialValue="0" readOnly="false" id="model.module.Register2134d8c9" />
 
 	<!--............. register arrays ...............-->
 	<!-- none -->
 
 	<!--............. condition bits ................-->
-	<ConditionBit name="HALT" bit="0" register="model.module.Register18c0e184" halt="true" id="model.module.ConditionBit354a7245" />
+	<ConditionBit name="HLT-BIT" bit="1" register="model.module.Register2134d8c9" halt="true" id="model.module.ConditionBit7e83db72" />
 
 	<!--............. rams ..........................-->
-	<RAM name="MAIN" length="4096" cellSize="16" id="model.module.RAM1748bcdb" />
+	<RAM name="MAIN" length="4096" cellSize="16" id="model.module.RAM38e1c365" />
 
 	<!--............. set ...........................-->
 	<!-- none -->
@@ -144,7 +137,7 @@
 	<!-- none -->
 
 	<!--............. increment .....................-->
-	<Increment name="INCR-PC" register="model.module.Register24cfea57" delta="1" id="model.microinstruction.Increment4c8e7137" />
+	<Increment name="INCR-PC" register="model.module.Register32a84a6f" delta="1" id="model.microinstruction.Increment9a5ddb7" />
 
 	<!--............. shift .........................-->
 	<!-- none -->
@@ -153,14 +146,14 @@
 	<!-- none -->
 
 	<!--............. arithmetic ....................-->
-	<Arithmetic name="AC&lt;-AC+DR" type="ADD" source1="model.module.Register3e6cf1fb" source2="model.module.Register1cd40cf6" destination="model.module.Register3e6cf1fb" id="model.microinstruction.Arithmetic53dd75e3" />
+	<!-- none -->
 
 	<!--............. branch ........................-->
 	<!-- none -->
 
 	<!--............. transferRtoR ..................-->
-	<TransferRtoR name="AR&lt;-IR(0-11)" source="model.module.Register32a2004f" srcStartBit="0" dest="model.module.Register1c015f4b" destStartBit="0" numBits="12" id="model.microinstruction.TransferRtoR35e3ed87" />
-	<TransferRtoR name="AR&lt;-PC" source="model.module.Register24cfea57" srcStartBit="0" dest="model.module.Register1c015f4b" destStartBit="0" numBits="12" id="model.microinstruction.TransferRtoR671f2184" />
+	<TransferRtoR name="IR(0-11)-&gt;AR" source="model.module.Register3cedc4c3" srcStartBit="0" dest="model.module.Register49298f6a" destStartBit="0" numBits="12" id="model.microinstruction.TransferRtoR4d876887" />
+	<TransferRtoR name="PC-&gt;AR" source="model.module.Register32a84a6f" srcStartBit="0" dest="model.module.Register49298f6a" destStartBit="0" numBits="12" id="model.microinstruction.TransferRtoR4f0a698d" />
 
 	<!--............. transferRtoA ..................-->
 	<!-- none -->
@@ -169,22 +162,21 @@
 	<!-- none -->
 
 	<!--............. decode ........................-->
-	<Decode name="DECODE-IR" ir="model.module.Register32a2004f" id="model.microinstruction.Decode5827e399" />
+	<Decode name="DECODE-IR" ir="model.module.Register3cedc4c3" id="model.microinstruction.Decode2bc6d619" />
 
 	<!--............. set condition bit .............-->
-	<SetCondBit name="SET-HLT-BIT" bit="model.module.ConditionBit354a7245" value="1" id="model.microinstruction.SetCondBit606df713" />
+	<SetCondBit name="HLT" bit="model.module.ConditionBit7e83db72" value="1" id="model.microinstruction.SetCondBit273fea2" />
 
 	<!--............. io ............................-->
-	<IO name="AC&lt;-INPUT-INT" direction="input" type="integer" buffer="model.module.Register3e6cf1fb" connection="[Console]" id="model.microinstruction.IO4ac8a14c" />
-	<IO name="INT&lt;-OUTPUT-AC" direction="output" type="integer" buffer="model.module.Register3e6cf1fb" connection="[Console]" id="model.microinstruction.IO5445ba90" />
+	<IO name="INP" direction="input" type="integer" buffer="model.module.Register6e508321" connection="[Console]" id="model.microinstruction.IO4d7207aa" />
+	<IO name="OUT" direction="output" type="integer" buffer="model.module.Register6e508321" connection="[Console]" id="model.microinstruction.IOfdeaad3" />
 
 	<!--............. memory access .................-->
-	<MemoryAccess name="AR&lt;-MAIN[AR]" direction="read" memory="model.module.RAM1748bcdb" data="model.module.Register1c015f4b" address="model.module.Register1c015f4b" id="model.microinstruction.MemoryAccess3319b0aa" />
-	<MemoryAccess name="DR&lt;-MAIN[AR]" direction="read" memory="model.module.RAM1748bcdb" data="model.module.Register1cd40cf6" address="model.module.Register1c015f4b" id="model.microinstruction.MemoryAccess3cc31cb5" />
-	<MemoryAccess name="IR&lt;-MAIN[AR]" direction="read" memory="model.module.RAM1748bcdb" data="model.module.Register32a2004f" address="model.module.Register1c015f4b" id="model.microinstruction.MemoryAccess330e08a0" />
+	<MemoryAccess name="MAIN[AR]-&gt;DR" direction="read" memory="model.module.RAM38e1c365" data="model.module.Register17df30fe" address="model.module.Register49298f6a" id="model.microinstruction.MemoryAccess4b1030d1" />
+	<MemoryAccess name="MAIN[AR]-&gt;IR" direction="read" memory="model.module.RAM38e1c365" data="model.module.Register3cedc4c3" address="model.module.Register49298f6a" id="model.microinstruction.MemoryAccess35982eb5" />
 
 	<!--............. end ...........................-->
-	<End id="model.microinstruction.End4a66b56b" />
+	<End id="model.microinstruction.End22ea4cf6" />
 
 	<!--............. comment ...........................-->
 	<!-- none -->
@@ -194,44 +186,22 @@
 
 	<!--............. fetch sequence ................-->
 	<FetchSequence>
-		<Microinstruction microRef="model.microinstruction.TransferRtoR671f2184" />
-		<Microinstruction microRef="model.microinstruction.MemoryAccess330e08a0" />
-		<Microinstruction microRef="model.microinstruction.Increment4c8e7137" />
-		<Microinstruction microRef="model.microinstruction.TransferRtoR35e3ed87" />
-		<Microinstruction microRef="model.microinstruction.Decode5827e399" />
+		<Microinstruction microRef="model.microinstruction.TransferRtoR4f0a698d" />
+		<Microinstruction microRef="model.microinstruction.MemoryAccess35982eb5" />
+		<Microinstruction microRef="model.microinstruction.Increment9a5ddb7" />
+		<Microinstruction microRef="model.microinstruction.TransferRtoR4d876887" />
+		<Microinstruction microRef="model.microinstruction.Decode2bc6d619" />
 	</FetchSequence>
 
 	<!--............. machine instructions ..........-->
-
-	<MachineInstruction name="WRITE" opcode="5" instructionFormat="OPCODE UNUSED" assemblyFormat="OPCODE" instructionColors="#aa8282 #a0b6a3" assemblyColors="#aa8282" >
-		<Microinstruction microRef="model.microinstruction.IO5445ba90" />
-		<Microinstruction microRef="model.microinstruction.End4a66b56b" />
-	</MachineInstruction>
-
-	<MachineInstruction name="ADD" opcode="4" instructionFormat="OPCODE I ADDRESS" assemblyFormat="OPCODE I ADDRESS" instructionColors="#f59dc7 #dcced0 #c4c1e5" assemblyColors="#f59dc7 #dcced0 #c4c1e5" >
-		<Microinstruction microRef="model.microinstruction.TransferRtoR35e3ed87" />
-		<Microinstruction microRef="model.microinstruction.MemoryAccess3319b0aa" />
-		<Microinstruction microRef="model.microinstruction.MemoryAccess3cc31cb5" />
-		<Microinstruction microRef="model.microinstruction.Arithmetic53dd75e3" />
-		<Microinstruction microRef="model.microinstruction.End4a66b56b" />
-	</MachineInstruction>
-
-	<MachineInstruction name="READ" opcode="3" instructionFormat="OPCODE UNUSED" assemblyFormat="OPCODE" instructionColors="#f8d9a1 #90f0f7" assemblyColors="#f8d9a1" >
-		<Microinstruction microRef="model.microinstruction.IO4ac8a14c" />
-		<Microinstruction microRef="model.microinstruction.End4a66b56b" />
-	</MachineInstruction>
-
-	<MachineInstruction name="STOP" opcode="0" instructionFormat="OPCODE UNUSED" assemblyFormat="OPCODE" instructionColors="#b4bae6 #a6e4bc #f383b6 #d888af" assemblyColors="#b4bae6 #f383b6 #d888af" >
-		<Microinstruction microRef="model.microinstruction.SetCondBit606df713" />
-		<Microinstruction microRef="model.microinstruction.End4a66b56b" />
-	</MachineInstruction>
+	<!-- none -->
 
 	<!--............. highlighting info .............-->
 	<HighlightingInfo>
 	</HighlightingInfo>
 
 	<!--............. loading info ..................-->
-	<LoadingInfo ram="model.module.RAM1748bcdb" startingAddress="26" />
+	<LoadingInfo ram="model.module.RAM38e1c365" startingAddress="0" />
 
 	<!--............. indexing info ............-->
 	<IndexingInfo indexFromRight="true" />

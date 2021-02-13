@@ -1,57 +1,75 @@
  //Harsh Bamotra
-//Program to student class
+//Program to write the details of student in a text file
 
 #include <iostream>
+#include <fstream>
 using namespace std;
-
-//defining class student
-class student                                          
+ 
+class student					      //Defining class student
     {
-	public:                                 //defining data members
-	int Roll_no , Year , T_marks;
-	string Name , Class;
+        private:                                    //defining private members
+        string roll_no , name , Class;
+        int year , t_marks; 
 
-	void display()                        //defining function to print data members
-		{
-			cout << "Roll No::" << Roll_no << endl;
-			cout << "Name::" << Name << endl;
-			cout << "Class::" << Class << endl;
-			cout << "Year::" << Year << endl;
-			cout << "Total marks::" << T_marks << endl;
-		}
+        public:                                   //defining public members
+        void getdata()                           //defining function to input data from user
+            {
+                cout << "Enter your name ::";
+                getline(cin , name);
+                fflush;
+                cout << "Enter your roll no ::";
+                cin >> roll_no;
+                cout << "Enter your class ::";
+                cin >> Class;
+                cout << "Enter the year ::";
+                cin >> year;
+                cout << "Enter your Total marks ::";
+                cin >> t_marks;
+                cin.ignore();
+                       
+            }
+
+        void write()                                                     //defining function to write in the text file
+            {
+                ofstream out("sample.txt" , ios::app);			//defining output stream cursor to write in the text file
+                out << "***** Details of the student *****\n";
+                out << "Name ::" << name << "\n" ;
+                out << "Roll No. ::" << roll_no << "\n" ;
+                out << "Class ::" << Class << "\n" ;
+                out << "Year ::" << year << "\n" ;
+                out << "Total marks ::" << t_marks << "\n";
+                out << "**********************************\n\n";
+            }
+        
+        void display()							//defining fucntion to display inputed data
+            {
+                cout << "Roll No. ::" << roll_no << endl;
+                cout << "Name ::" << name << endl;
+                cout << "Class ::" << Class << endl;
+                cout << "Year ::" << year << endl;
+                cout << "Total marks ::" << t_marks;
+            }
+
     };
 
 int main()
     {
-	student arr[5];                          //defining object
-	for(int i=0 ; i<5 ; i++)                //loop to initailize data members
-		{
-			cout << "***** Enter the details of the " << i+1 <<" student *****" << endl;
-			cout << "Enter your roll no::";
-			cin >> arr[i].Roll_no;
-			cout << "Enter your name::";
-			cin >> arr[i].Name;
-			cout << "Enter you class::";                        //initializing the data members 
-			cin >> arr[i].Class;				   //by taking input form the user
-			cout << "Enter the year::";
-			cin >> arr[i].Year;
-			cout << "Enter your total marks::";
-			cin >> arr[i].T_marks;
-			cout << endl;
-		}
+        student arr[5];						//defining class student object
 
-	for(int i=0 ; i<5 ; i++)
-		{	
-			cout << "Details of the student " << i+1 << endl;
-			arr[i].display();                                       //printing the details by using function display
-			cout << endl;
-		}
-	return 0;
-   }
-
-			
-			
-	
-			
-	
-	
+        for(int i=0 ; i<5 ; i++)                               
+            {
+                cout << "***** Enter the details of the student " << i+1 << " *****" << endl;
+                arr[i].getdata();				
+                cout << endl;					//taking input from the user
+            }
+        
+        for(int i=0 ; i<5 ; i++)                          
+            {
+                cout << "***** Details of the student "  << i+1 << " *****" << endl;
+                arr[i].display();				 //printing the data to the user
+                arr[i].write();					//writing data in the text file
+                cout << endl;
+                cout << "**** Saved this data successfully ****" << endl << endl;
+            }
+        
+    }
