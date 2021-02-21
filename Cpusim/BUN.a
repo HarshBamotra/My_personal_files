@@ -1,7 +1,0 @@
-START: INP
-STA NUM
-BUN X
-OUT
-X: HLT
-
-NUM: .data 1 0

@@ -1,0 +1,9 @@
+;Program to stimulate ISZ
+
+START: INP
+STA NUM
+ISZ NUM
+OUT
+HLT
+
+NUM: .data 1 0

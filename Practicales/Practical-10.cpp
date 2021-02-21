@@ -8,46 +8,47 @@ using namespace std;
 //defining class triangle 
 class triangle
     {
-	private:                                       //defining private members
-	int base , height , side;
+	private:                                      //defining private members
+	double base , height , side;
 	
 	public:
-	void setData(int x , int y , int z)        //function to initialize the private members
+	void setData(double x , double y , double z)        //function to initialize the private members
 		{
 			base=x;
 			height=y;
 			side=z;
 		}
 
-	void setData(int x , int y)           //overloading setData  
+	void setData(double x , double y)           //overloading setData  
 		{
 			base=x;
 			height=y;
+			side=0;
 		}
 
-	int area(int base , int height)      //function to calculate the area
+	double area(double base , double height)      //function to calculate the area
 		{
-			int area;
+			double area;
 			area=0.5*base*height;
 			return area;
 		}
 
-	int area(int base , int height , int side)   //overloafing area
+	double area(double base , double height , double side)   //overloading area
 		{
-			int area , sp;
+			double area , sp;
 			sp=(base+height+side)/2;
 			area=sqrt(sp*(sp-base)*(sp-height)*(sp-side));
 			return area;
 		}
 
-	void operator =(triangle m)                //overloading assignment operator 
+	void operator =(triangle &m)                //overloading assignment operator 
 		{
 			m.base=base;
 			m.height=height;
 			m.side=side;
 		}
 	
-	bool operator ==(triangle m)            //overloading equality operator 
+	bool operator ==(triangle &m)            //overloading equality operator 
 		{
 			if(m.base==base && m.height==height && m.side==side)
 				{
@@ -64,27 +65,58 @@ class triangle
 
 int main()
     {
-	int s1 , s2 , s3 , base , height;                 //defining variables
+	double s1 , s2 , s3;                 //defining variables
+	int ch;
 	triangle t1 , t2;                    //defining objects
 
-	cout << "***** Enter the sides of the triangle *****" << endl;
-	cout << "Enter the first side of the triangle::";
-	cin >> s1;
-	cout << "Enter the second side of the triangle::";             //taking the length of sides 
-	cin >> s2;
-	cout << "Enter the third side of the triangle::";
-	cin >> s3;
-	t1.setData(s1 , s2 , s3);                         //initializing data members
-	cout << "The area of the triangle::" << t1.area(s1 , s2 , s3) << endl;          //printing the result
+	cout << endl << "***************** MENU ************************" << endl;
+	cout << "1. Find area using three sides." << endl;
+	cout << "2. Find area using two sides." << endl;
+	cout << "Enter your choice ::";
+	cin >> ch;
 
-	cout << endl << "*****Enter the sides of the second triangle ***** " << endl;
-	cout << "Enter the base of the triangle::";
-	cin >> base;
-	cout << "Enter the height of the triangle::";              //taking the base and height
-	cin >> height;
-	t2.setData(base , height);                        //initializing data members
-	cout << "The area of the triangle::" << t2.area(base , height);                   //printing the result
+	switch (ch)
+		{
+			case 1:
+				cout << endl << "***** Enter the sides of the triangle *****" << endl;
+				cout << "Enter the first side of the triangle::";
+				cin >> s1;
+				cout << "Enter the second side of the triangle::";             //taking the length of sides 
+				cin >> s2;
+				cout << "Enter the third side of the triangle::";
+				cin >> s3;
+				t1.setData(s1 , s2 , s3);                         //initializing data members
+				cout << "The area of the triangle::" << t1.area(s1 , s2 , s3) << endl;          //printing the result
+				break;
 
+			case 2:
+				cout << endl << "***** Enter the sides of the triangle *****" << endl;
+				cout << "Enter the first side of the triangle::";
+				cin >> s1;
+				cout << "Enter the second side of the triangle::";             //taking the length of sides 
+				cin >> s2;
+				t1.setData(s1 , s2);                         //initializing data members
+				cout << "The area of the triangle::" << t1.area(s1 , s2) << endl;          //printing the result
+				break;
+
+			default:
+				cout << "Wrong Input !! Exiting !!";
+				break;
+		}
+	
+	if(ch==1 || ch==2)
+		{
+			t1=t2;              //demonstrating assignment 
+			cout << endl << "********** Checking assignment ***********" << endl;
+			if(t1==t2)          //demonstrating equality operator 
+				{
+					cout << "Assignment successfull !!";
+				}
+			else
+				{
+					cout << "Not successfull !!";
+				}
+		}
 	return 0;
     }
 	

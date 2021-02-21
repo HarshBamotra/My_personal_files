@@ -1,0 +1,12 @@
+;Program to subtract two integers
+
+START: INP 
+STA NUM
+INP
+CMA
+INC
+ADD NUM
+OUT
+HLT
+
+NUM: .data 1 0

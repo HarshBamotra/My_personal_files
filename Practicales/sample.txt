@@ -38,3 +38,43 @@ Year ::2021
 Total marks ::100
 **********************************
 
+***** Details of the student *****
+Name ::Harsh Bamotra
+Roll No. ::1
+Class ::12
+Year ::2021
+Total marks ::100
+**********************************
+
+***** Details of the student *****
+Name ::12
+Roll No. ::12
+Class ::12
+Year ::12
+Total marks ::12
+**********************************
+
+***** Details of the student *****
+Name ::12
+Roll No. ::12
+Class ::12
+Year ::12
+Total marks ::12
+**********************************
+
+***** Details of the student *****
+Name ::12
+Roll No. ::12
+Class ::12
+Year ::12
+Total marks ::12
+**********************************
+
+***** Details of the student *****
+Name ::12
+Roll No. ::12
+Class ::12
+Year ::12
+Total marks ::12
+**********************************
+

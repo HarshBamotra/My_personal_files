@@ -1,0 +1,7 @@
+;Harsh Bamotra
+;Program to subtract two integers in both direct and indirect addressing 
+
+INP         ;taking input from the user
+SUB 0 82    ;subtracting 
+OUT         ;giving output
+HLT         ;halting the program

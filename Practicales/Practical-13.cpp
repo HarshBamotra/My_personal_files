@@ -30,16 +30,23 @@ class student					      //Defining class student
             }
 
         void write()                                                     //defining function to write in the text file
-            {
-                ofstream out("sample.txt" , ios::app);			//defining output stream cursor to write in the text file
-                out << "***** Details of the student *****\n";
-                out << "Name ::" << name << "\n" ;
-                out << "Roll No. ::" << roll_no << "\n" ;
-                out << "Class ::" << Class << "\n" ;
-                out << "Year ::" << year << "\n" ;
-                out << "Total marks ::" << t_marks << "\n";
-                out << "**********************************\n\n";
-            }
+	    {
+                ofstream out("samp.txt" , ios::app);			//defining output stream cursor to write in the text file
+                if(out)
+			{
+				out << "***** Details of the student *****\n";
+                		out << "Name ::" << name << "\n" ;
+                		out << "Roll No. ::" << roll_no << "\n" ;
+                		out << "Class ::" << Class << "\n" ;
+                		out << "Year ::" << year << "\n" ;
+                		out << "Total marks ::" << t_marks << "\n";
+                		out << "**********************************\n\n";
+            		}
+		else
+			{
+				cout << "File not found !!";
+			}
+	    }
         
         void display()							//defining fucntion to display inputed data
             {

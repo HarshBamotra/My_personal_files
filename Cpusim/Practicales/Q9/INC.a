@@ -1,0 +1,6 @@
+;Program to stimulate the machine for INC
+
+INP
+INC
+OUT
+HLT
