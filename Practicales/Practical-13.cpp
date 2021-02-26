@@ -62,7 +62,8 @@ class student					      //Defining class student
 int main()
     {
         student arr[5];						//defining class student object
-
+	
+	ofstream out("samp.txt");
         for(int i=0 ; i<5 ; i++)                               
             {
                 cout << "***** Enter the details of the student " << i+1 << " *****" << endl;
