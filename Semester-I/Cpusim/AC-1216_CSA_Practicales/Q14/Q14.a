@@ -1,0 +1,6 @@
+;Adding two numbers using indirect addessing  
+  
+INP          ;taking input
+ADD_I 1 82     ;adding numbers
+OUT          ;printing the sum
+HLT          ;halting the machine

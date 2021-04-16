@@ -1,6 +1,0 @@
-;Adding two numbers using indirect addessing  
-  
-READ         ;taking input
-ADD 1 82     ;adding numbers
-WRITE        ;printing the sum
-STOP         ;halting the machine
