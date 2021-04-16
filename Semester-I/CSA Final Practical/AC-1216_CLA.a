@@ -1,6 +1,0 @@
-;Program to stimulate the machine for CLA
-
-INP       ;Taking input
-CLA       ;Clearing AC
-OUT       ;Printing output
-HLT       ;Halting 
