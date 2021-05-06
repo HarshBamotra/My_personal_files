@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <math.h>
-#include <array>
 using namespace std;
 
 class sets
