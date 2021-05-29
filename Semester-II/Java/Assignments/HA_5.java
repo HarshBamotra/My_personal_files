@@ -14,9 +14,9 @@ class Student
                 name=na;
                 course=cou;
                 subjects[0]=s1;
-                subjects[1]=s1;
-                subjects[2]=s1;
-                subjects[3]=s1;
+                subjects[1]=s2;
+                subjects[2]=s3;
+                subjects[3]=s4;
             }
 
     //second way to initialize
