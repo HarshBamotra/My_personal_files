@@ -1,100 +1,65 @@
  //Harsh Bamotra AC-1216
-//Program to weather an expression is a well formed formula or not
+//Program for binary search using rescursion
 
 #include <iostream>
-#include <stack>
-#include<cstring>
 using namespace std;
 
-bool isBalancedExp(string exp) 
+//defining function for binary search  
+int binary(int s , int high , int low , int arr[])
     {
-	stack<char> stk;
-	char x;
-	for (int i=0; i<exp.length(); i++) 
+	if(high>=1)   //checking for empty array
 		{
-      			if (exp[i]=='('||exp[i]=='['||exp[i]=='{') 
-				{
-         				stk.push(exp[i]);
-         				continue;
-      				}
-      			if (stk.empty())
-      				return false;
-      			switch (exp[i])
-				{
-         				case ')':
-         					x = stk.top();
-         					stk.pop();
-         					if (x=='{' || x=='[')
-         						return false;
-         					break;
+			
+			int mid=low+(high-1)/2;
+			if(arr[mid]==s)             //searching in the mid index
+				{		   //and if found then returning the index
+					return mid; 
+				}
+			else if(arr[mid]>s)          //checking in the lower part 
+				{                   //of the array
 
-         				case '}':
-         					x = stk.top();
-         					stk.pop();
-         					if (x=='(' || x=='[')
-         						return false;
-      						break;
+					return binary(s , mid-1 , low , arr );
+				}
 
-      					case ']':
-         					x = stk.top();
-         					stk.pop();
-         					if (x =='(' || x == '{')
-         						return false;
-         					break;
-      				}
-   		}
-   	return (stk.empty());
+			else                      //checking in the upper part
+				{                //of the array
+
+					return binary(s , high , mid+1 , arr);
+				}
+		}
+
+	return -1;     //returning -1 to check for exception
     }
-int main() 
-    {
-	string expresion ; 
-	bool chk = true ; 
-	cout << "************ Instructions ************" << endl;
-	cout << "1. Please enter the expression in capitals." << endl;
-	cout << "2. There should be no space between the letter." << endl;
-	cout << "3. The expression should have atleast one pair of brackerts." << endl;
-	cout << "4. The symbols associated should be : " << endl; 
-	cout << "Conjunction : &" << endl << "Disjunction : |" << endl << "Biconditional : > \n Negation : ~ ";
-	cout<<"\nEnter the expression : " ; 
-	getline(cin,expresion) ;
-   	if (isBalancedExp(expresion))
-        	cout << "This Expression has balanced brackets";
-   	else
-		{
-			cout << "This Expression does not have balanced brackets"; 
-			exit(0) ;
-		}
-	for (int i=0; i<expresion.length(); i++)
-		{	
-			if((isdigit(expresion[i])) || (expresion[i] == ' ') )
-				{
-					cout<<"\nThe expression cannot contain a number or a space !! " ; 
-					exit(0) ; 
-				}
-		}
-	for (int i=0; i<expresion.length(); i++)
-		{
-			if(isupper(expresion[i]))
-				{
-					if((expresion[i-1] == '&')||(expresion[i-1] == '|')||(expresion[i-1] == '>')||(expresion[i-1] == '~' )||(expresion[i-1] =='(' )|| (expresion[i-1] == ')' )|| (expresion[i-1] == '[' )|| (expresion[i-1] == ']' )|| (expresion[i-1] == '{' )|| (expresion[i-1] == '}' ) )
-						{
-							continue ; 
-						}	
-					else
-						{
-							cout<<"\nWRong no. of inputs !! " ; 
-							exit ( 0 ) ;
-							chk = false ; 
-						}
-				}
-		}
-	if(chk)
-		{
-			cout<<"\nThe given expression is a well formed formula " ; 
-		}
-	else
-		{
-			cout<<"\nThe given expression is not a well formed formula " ; 
-		}
-	return 0 ; 
-}
+
+int main()
+
+    	{
+		int n , s;                               //defining variables
+		cout << "Enter the number of elements::";
+		cin >> n;                        //taking number of elements
+		int arr[n];
+		cout << "Enter the elements in ascending order::" << endl;
+		for(int i=0 ; i<n ; i++)
+			{
+				cin >> arr[i];    //inisializing the elements in the array
+			}
+		cout << "The array you entered::";
+		for(int i=0 ; i<n ; i++)
+			{
+				cout << arr[i] << " ";   //printing the array
+			}
+		cout << endl << "Enter the element you want to search::";
+		cin >> s;                              //taking the search element
+		int r=binary(s , n-1 , 0 , arr);
+		if(r==-1)
+			{
+				cout << "Element not found !!";
+			}
+		else                                    //printing the final result
+			{
+				cout << "Element found at index::" << r;
+			}
+		return 0;
+    }
+	
+	 

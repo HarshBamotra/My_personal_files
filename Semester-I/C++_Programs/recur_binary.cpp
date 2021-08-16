@@ -1,5 +1,5 @@
  //Harsh Bamotra AC-1216
-//Program for binary sort using rescursion
+//Program for binary search using rescursion
 
 #include <iostream>
 using namespace std;
