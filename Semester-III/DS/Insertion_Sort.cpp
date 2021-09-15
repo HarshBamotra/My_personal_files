@@ -4,7 +4,8 @@
 #include <iostream>
 using namespace std;
 
-void InsertionSort(int n , int arr[])
+template <class T>
+void InsertionSort(int n , T arr[])
 	{
 		int key;
 		for(int i=1 ; i<n ; i++)
@@ -39,7 +40,7 @@ int main()
 			cout << arr[i] << " ";
 		}
 
-	InsertionSort(n , arr);
+	InsertionSort<int>(n , arr);
 	
 	cout << endl << "The array after sorting ::";
 	for(int i=0 ; i<n ; i++)
