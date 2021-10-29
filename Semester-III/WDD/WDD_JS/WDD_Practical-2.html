@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practical-2</title>
+    <style>
+        #colorbox{
+            height: 350px;
+            width: 350px;
+        }
+
+        #label{
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="colorbox"></div>
+    <hr>
+    <input type="text" id="label" value="This is a textbox !!">
+    <Script Language="JavaScript">
+        function RandomColor()
+            {
+                var letter="0123456789ABCDEF";
+                var color="#";
+                for(var i=0 ; i<6 ; i++)
+                    {
+                        color+=letter[Math.floor(Math.random()*16)];
+                    }
+                return color;
+            }
+        setInterval(function(){
+            document.getElementById("colorbox").style.backgroundColor=RandomColor()
+        } , 2000);
+
+        setTimeout(function(){
+            var l=document.getElementById("label");
+            l.style.fontSize="20px";
+            l.innerTex=document.getElementById("label").value;
+        } , 3000)
+    </Script>
+</body>
+</html>

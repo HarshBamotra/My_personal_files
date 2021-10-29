@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <title>Cookies</title>
+    <script language="JavaScript">
+        var name=prompt("Enter your name ::" , "Name");
+        var ccookie=document.cookie;
+        var flag=false;
+        const arr = ccookie.split("; ");
+
+        console.log(ccookie);
+        console.log(arr)
+        function newcookie(value)
+            {
+                document.cookie=value+"="+value+";max-age="+(60*60*60*24);
+            }
+        for(var i=0 ; i<=ccookie.length ; i++)
+            {
+                var s=name+"="+name;
+                if(arr[i]==s)
+                    {
+                        flag=true;
+                    }
+            }
+        
+        if(flag)
+            alert("Welcome back " + name);
+        else
+            {
+                alert("Welcome " + name);
+                newcookie(name);
+            }   
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

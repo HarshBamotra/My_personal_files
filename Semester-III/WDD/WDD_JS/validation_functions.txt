@@ -1,0 +1,72 @@
+function testage(form)
+            {
+                a = form.age.value;
+                if(a<18 || a>22)
+                    {
+                        alert("Age should be between 18 to 22 !!");
+                        return false;
+                    }
+                else
+                    return true;
+            }
+
+        function testblank(form)
+            {
+                var flag=false;
+                for(var i=0 ; i<5 ; i++)
+                    {
+                        if(form.elements[i].value=="")
+                            {
+                                flag=true;
+                            }  
+                    }
+                if(form.address.value=="")
+                    flag=true;
+
+                if(flag==true)
+                    {
+                        alert("Text box and fields can not be blank !!");
+                        return false;
+                    }   
+            }
+
+        function testimage(form)
+            {
+                var array = form.photo.value.split(".");
+                var ext = array[1];
+                if(ext=="jpg" || ext=="png")
+                    {
+                        return true;
+                    }   
+                else
+                    {
+                        alert("Please select a valid image file !!");
+                        return false;
+                    }       
+            }
+
+            function ValidateEmail(form) 
+                {
+                    var e=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                    if (!e.test(form.mailid.value))
+                        {
+                            alert("You have entered an invalid email address!")
+                            return (false)
+                        }
+                    else
+                        return ture;
+                }
+
+        function testroll(form)
+            {
+                var roll = form.rollno.value.length;
+                if(roll==7)
+                    {
+                        return true;
+                    }
+                else
+                    {
+                        alert("Please enter a valid roll no !!");
+                        return false;
+                    }
+            }

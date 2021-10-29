@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User Defiend Functions</title>
+    <script LANGUAGE="JavaScript">
+        var name="";
+        function hello()
+            {
+                name = prompt("Enter your name::" , "Name");
+                alert("welcome to my web page " + name);
+            }
+
+        function goodbye()
+            {
+                alert("Goodbye " + name + "Please visit again !!");
+            }
+    </script>
+</head>
+<body onload="hello();" onunload="goodbye();">
+    <p>This is example page of user defined functions</p>
+</body>
+</html>

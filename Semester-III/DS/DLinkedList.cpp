@@ -196,7 +196,7 @@ class DLinkedList
 			T value;
 			node<T> *temp1=head;	
 			node<T> *temp2=head;
-			if(i<0 | i>len())
+			if(i<0 || i>len())
 				cout << "List position out of bound !!" << endl;
 			else if(i==0)
 				return removeFromHead();
