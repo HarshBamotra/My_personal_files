@@ -34,6 +34,7 @@ int binary(int s , int high , int low , int arr[])
 int main()
 
     	{
+<<<<<<< HEAD
 		int n , s;                               //defining variables
 		cout << "Enter the number of elements::";
 		cin >> n;                        //taking number of elements
@@ -59,6 +60,32 @@ int main()
 			{
 				cout << "Element found at index::" << r;
 			}
+=======
+		cout << "********** Binary Search *********" << endl;
+		int n , s;                               
+		cout << "Enter the number of elements::";
+		cin >> n;                        
+		int arr[n];
+
+		cout << "Enter the elements in ascending order::" << endl;
+		for(int i=0 ; i<n ; i++)
+			cin >> arr[i]; 
+   
+		cout << "The array you entered::";
+		for(int i=0 ; i<n ; i++)
+			cout << arr[i] << " ";
+		cout << endl << "**********************************" << endl;
+
+		cout << "Enter the element you want to search::";
+		cin >> s; 
+                             
+		int r=binary(s , n-1 , 0 , arr);
+		if(r==-1)
+			cout << "Element not found !!";
+		else                                    
+			cout << "Element found at index::" << r;
+
+>>>>>>> 4d317ef8333281ba4d51c94cde6603015ba7eaf0
 		return 0;
     }
 	
