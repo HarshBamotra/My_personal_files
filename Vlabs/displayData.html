@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Display Data</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+</head>
+
+<body>
+    <!-- <form action="" onsubmit="return validateForm()"> -->
+    <h2>Enter details of Students :- </h2>
+    <form action="">
+    <div class="inputBox">
+        <div class="personalDetails">
+            <span>Name</span><br>
+            <input onchange="charerr(this)" id="name" type="text" placeholder="Enter your name" ><br>
+            <p id="username" class="Error"></p>
+            <span>Rollno</span><br>
+            <input onchange="charerr(this)" id="rollno" type="number" placeholder="Enter your roll no." ><br>
+            <p id="userrollno" class="Error"></p>
+            <span>Course</span><br>
+            <input onchange="charerr(this)" id="course" type="text" placeholder="Enter your course" ><br>
+            <p id="usercourse" class="Error"></p>
+            <!-- <div class="data">Name : <input id="name" type="text"></div>
+            <div class="data">Rollno : <input id="rollno" type="number"></div>
+            <div class="data">Course : <input id="course" type="text"></div> -->
+        </div>
+        <h3>Enter marks in following subjects (out of 50) : - </h3>
+        <div class="subjectMarks">
+            <span>C++</span><br>
+            <input onchange="showerror(this)" class="mark" id="marks1" type="number"></br>
+            <p id="marks1error" class="Error"></p>
+
+            <span>Java</span><br>
+            <input onchange="showerror(this)" class="mark" id="marks2" type="number"></br>
+            <p id="marks2error" class="Error"></p>
+
+            <span>Python</span><br>
+            <input onchange="showerror(this)" class="mark" id="marks3" type="number"></br>
+            <p id="marks3error" class="Error"></p>
+            <span>Maths</span><br>
+            <input onchange="showerror(this)" class="mark" id="marks4" type="number"></br>
+            <p id="marks4error" class="Error"></p>
+
+            <span>English</span><br>
+            <input onchange="showerror(this)" class="mark" id="marks5" type="number"></br>
+            <p id="marks5error" class="Error"></p>
+
+            
+            
+            <!-- <div class="data">C++ : <input id="marks1" type="number"></div>
+            <div class="data">Java : <input id="marks2" type="number"></div>
+            <div class="data">Python : <input id="marks3" type="number"></div>
+            <div class="data">Maths : <input id="marks4" type="number"></div>
+            <div class="data">English : <input id="marks5" type="number"></div> -->
+        </div>
+
+    </div>
+    <input type="reset" id="reset" name="Reset Data">
+    </form>
+    <input type="submit" id="insert" name="Input Data">
+    
+<!-- </form> -->
+    <h2>Student Details</h2>
+    <table id="showdata">
+        <tr>
+            <th>Name</th>
+            <th>Rollno</th>
+            <th>Course</th>
+            <th colspan="5">Marks</th>
+            <th>Grade</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>C++</td>
+            <td>Java</td>
+            <td>Python</td>
+            <td>Maths</td>
+            <td>English</td>
+            <td></td>
+        </tr>
+    </table>
+    <script src="script.js"></script>
+</body>
+
+</html>

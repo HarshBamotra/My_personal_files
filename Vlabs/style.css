@@ -1,0 +1,126 @@
+*{
+    margin:0 10px;
+    padding: 0px;
+
+}
+body{
+    background-color:mintcream;
+    margin: 10px;
+}
+h2{
+    text-decoration:underline;
+    margin: 20px;
+    color:navy;
+    text-align: center;
+}
+.inputBox {
+    margin-top: 30px;
+    margin-left: 60px;
+}
+.data {
+    font-size: 20px;
+    color:seagreen;
+    font-family: cursive;
+    margin: 25px;
+    width: 100%;
+}
+input{
+    border: none;
+    width:80%;
+    padding: 10px;
+    font-size: 18px;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    background-color:rgb(228, 226, 226);
+}
+h3{
+    font-style: italic;
+    margin: 20px;
+    color:darkolivegreen;
+}
+#insert {
+    font-size: 23px;
+    font-family:'Times New Roman', Times, serif;
+    background-color:turquoise;
+    color:white;
+    text-align: center;
+    margin: 30px;
+    padding: 12px;
+    border: 2px solid whitesmoke;
+    border-radius: 8px;
+    position: relative;
+    display: block;
+    width: 80%;
+    margin-bottom: 30px;
+    margin-left: 60px;
+    border: none;
+}
+#insert:hover {
+    background-color:mediumturquoise;
+    cursor: pointer;
+}
+table {
+    width: 90%;
+    margin: 50px;
+    padding: 10px;
+    border-collapse: collapse;
+    background-color:lightcyan;
+    text-align: center;
+}
+table, th, td {
+    border: 2px solid;
+    border-color:lightslategray;
+    padding: 10px;
+}
+th {
+    font-size: 24px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:cadetblue;
+    font-style: italic;
+}
+td {
+    font-size: 20px;
+    color:midnightblue;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* here start the updates in css pankaj did */
+.personalDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.subjectMarks{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* error style */
+.Error{
+    color: red;
+    margin: 0;
+    text-align: left;
+    padding-left: 8px;
+}
+
+#reset {
+    font-size: 23px;
+    font-family:'Times New Roman', Times, serif;
+    background-color:turquoise;
+    color:white;
+    text-align: center;
+    margin: 30px;
+    padding: 12px;
+    border: 2px solid whitesmoke;
+    border-radius: 8px;
+    position: relative;
+    display: block;
+    width: 80%;
+    margin-bottom: 30px;
+    margin-left: 60px;
+    border: none;
+}
+#reset:hover {
+    background-color:mediumturquoise;
+    cursor: pointer;
+}
