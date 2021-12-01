@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Program to do some random calculation and find result</title>
+    <script LANGUAGE="JavaScript">
+        function validate(form)
+            {
+                var flag=true;
+                var n=form.val.value;
+                if(n<2 || n>100)
+                    {
+                        flag=false;
+                        alert("Please enter a valid number::")
+                    } 
+                return flag; 
+            }
+    </script>
+</head>
+<body>
+    <form action="WDD_Practical-2.php" method="get">
+        <p>Enter a number between 2 to 100 ::</p>
+        <input type="number" , name="val">
+        <input type="submit" value="Submit" onclick="return validate(this.form);">
+    </form> 
+</body>
+</html>
