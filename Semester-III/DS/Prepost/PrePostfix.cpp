@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "AStack.h"
+using namespace std;
 
 int pow(int i , int j)
 	{
@@ -93,6 +94,7 @@ int postfix(string s)
 		
 								default:
 								cout << "Error in expression !!" << endl;
+								exit(0);
 								break;
 							}
 					}
