@@ -1,0 +1,98 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+TextData[{"Numerical"," ","Methods"," ","Practicals"}],
+"Title",ExpressionUUID -> "6c134b0e-ba78-41bd-bf6a-ab76c2244c1d"],Cell[
+CellGroupData[
+{Cell[
+TextData[{"Practical"," ","1",":"}],"Section",ExpressionUUID -> "f65d3abb-1dc3-4e11-aac6-f48c1ec146f4"],Cell[
+CellGroupData[
+{Cell[
+BoxData[{RowBox[{RowBox[{RowBox[{"bisection","[",RowBox[{"f_",","," ","ao_"," ",",","bo_"," ",","," ","n_"}]," ","]"}]," ",":="," ",RowBox[
+{"Module","[",RowBox[{RowBox[{"{","}"}],",",RowBox[{RowBox[{"a","=",RowBox[{"N","[","ao","]"}]}],";","\n",RowBox[
+{"b","=",RowBox[{"N","[","bo","]"}]}],";","\n",RowBox[{"If","[",RowBox[{RowBox[{RowBox[
+{RowBox[{"f","[","a","]"}],"*",RowBox[{"f","[","b","]"}]}],">","0"}],","," ",RowBox[
+{RowBox[{"Print","[","\"Bisection Method can not applied\"","]"}],";","\n",RowBox[
+{"Return","[","]"}]}]}],"]"}],";","\n",RowBox[{"p"," ","="," ",RowBox[{RowBox[{"(",RowBox[
+{"a","+","b"}],")"}],"/","2"}]}],";","\n",RowBox[{"i","=","1"}],";","\n",RowBox[{"While","[",RowBox[
+{RowBox[{"i","\[LessEqual]","n"}],",","\n",RowBox[{RowBox[{"If","[",RowBox[{RowBox[
+{RowBox[{RowBox[{"f","[","a","]"}],"*",RowBox[{"f","[","p","]"}]}],"<","0"}],","," ",RowBox[
+{"b","=","p"}]," ",","," ",RowBox[{"a","=","p"}]}],"]"}],";","\n",RowBox[{"Print","[",RowBox[
+{"i",","," ","\"        \"",","," ","a"," ",","," ","\"        \""," ",","," ","b"}],"]"}],";","\n",RowBox[
+{"i","++"}],";","\n",RowBox[{"p","=",RowBox[{RowBox[{"(",RowBox[{"a","+","b"}],")"}],"/","2"}]}]}]}],"]"}],";","\n",RowBox[
+{"Print","[",RowBox[{"\"Root=\""," ",",","p"}],"]"}]}]}],"]"}]}],";"}],"\n",RowBox[
+{RowBox[{RowBox[{"f","[","x_","]"}]," ",":=",RowBox[{RowBox[{"x","^","3"}]," ","+",RowBox[
+{"x","^","2"}],"-",RowBox[{"3","x"}],"-","3"}]}],";"}],"\n",RowBox[{"plot","[",RowBox[
+{RowBox[{"f","[","x","]"}]," ",","," ",RowBox[{"{",RowBox[{"x"," ",","," ",RowBox[
+{"-","3"}]," ",","," ","3"}],"}"}]}],"]"}],"\n",RowBox[{RowBox[{"bisection","[",RowBox[
+{"f"," ",","," ","1"," ",","," ","2"," ",","," ","5"}],"]"}],";"}]}],"Input",CellLabel -> "In[30]:= ",
+ExpressionUUID -> "f41b53f0-8e1f-4513-ad23-b535a299fdfc"],Cell[
+BoxData[RowBox[{"plot","[",RowBox[
+{RowBox[{RowBox[{"-","3"}],"-",RowBox[{"3"," ","x"}],"+",SuperscriptBox["x","2"],"+",SuperscriptBox[
+"x","3"]}],",",RowBox[{"{",RowBox[{"x",",",RowBox[{"-","3"}],",","3"}],"}"}]}],"]"}],
+StandardForm],"Output",CellLabel -> "Out[32]= ",ExpressionUUID -> "dab96edd-663e-44c3-910d-b6a636faaba2"],Cell[
+BoxData[
+InterpretationBox[RowBox[{"1","\[InvisibleSpace]","\"        \"","\[InvisibleSpace]","1.5`","\[InvisibleSpace]","\"        \"","\[InvisibleSpace]","2.`"}],
+SequenceForm[1,"        ",1.5`,"        ",2.`],Editable -> False],StandardForm],"Print",
+ExpressionUUID -> "ce3fc3f9-e7cc-4901-b513-1f676b31f975"],Cell[
+BoxData[InterpretationBox[
+RowBox[{"2","\[InvisibleSpace]","\"        \"","\[InvisibleSpace]","1.5`","\[InvisibleSpace]","\"        \"","\[InvisibleSpace]","1.75`"}],
+SequenceForm[2,"        ",1.5`,"        ",1.75`],Editable -> False],StandardForm],
+"Print",ExpressionUUID -> "b026a361-0d0d-44ae-aed5-0c8c143375ec"],Cell[
+BoxData[InterpretationBox[
+RowBox[{"3","\[InvisibleSpace]","\"        \"","\[InvisibleSpace]","1.625`","\[InvisibleSpace]","\"        \"","\[InvisibleSpace]","1.75`"}],
+SequenceForm[3,"        ",1.625`,"        ",1.75`],Editable -> False],StandardForm],
+"Print",ExpressionUUID -> "097366f5-f620-4376-852e-f15e299d0f56"],Cell[
+BoxData[InterpretationBox[
+RowBox[{"4","\[InvisibleSpace]","\"        \"","\[InvisibleSpace]","1.6875`","\[InvisibleSpace]","\"        \"","\[InvisibleSpace]","1.75`"}],
+SequenceForm[4,"        ",1.6875`,"        ",1.75`],Editable -> False],StandardForm],
+"Print",ExpressionUUID -> "79d9b4c6-40df-4941-946e-33be84e458c8"],Cell[
+BoxData[InterpretationBox[
+RowBox[{"5","\[InvisibleSpace]","\"        \"","\[InvisibleSpace]","1.71875`","\[InvisibleSpace]","\"        \"","\[InvisibleSpace]","1.75`"}],
+SequenceForm[5,"        ",1.71875`,"        ",1.75`],Editable -> False],StandardForm],
+"Print",ExpressionUUID -> "d36924bf-072e-4cf8-bc11-b9c540cbb7c6"],Cell[
+BoxData[InterpretationBox[
+RowBox[{"\"Root=\"","\[InvisibleSpace]","1.734375`"}],SequenceForm["Root=",1.734375`],
+Editable -> False],StandardForm],"Print",ExpressionUUID -> "9f451845-cc13-4057-b2b0-770ee37332ed"]},
+Open],ExpressionUUID -> "9684cc16-35a6-42c6-adff-13e36ba55477"]},Open],ExpressionUUID -> "a38aded8-d4d9-4e0d-974f-ff8939e4557a"],Cell[
+CellGroupData[
+{Cell[
+TextData[{"Practical"," ","2",":"}],"Section",ExpressionUUID -> "1cfe3e59-4de8-47d7-94df-ea1ab8676c70"],Cell[
+BoxData[
+{RowBox[{RowBox[{RowBox[{"secant","[",RowBox[{"f_",","," ","ao_"," ",",","bo_"," ",","," ","n_"}]," ","]"}],":="," ",RowBox[
+{"Module","[",RowBox[{RowBox[{"{","}"}],",",RowBox[{RowBox[{"p0","=",RowBox[{"N","[","ao","]"}]}],";","\n",RowBox[
+{"p1","=",RowBox[{"N","[","bo","]"}]}],";","\n",RowBox[{"If","[",RowBox[{RowBox[{RowBox[
+{RowBox[{"f","[","p0","]"}],"*",RowBox[{"f","[","p1","]"}]}],">","0"}],","," ",RowBox[
+{RowBox[{"Print","[","\"Secant Method can not applied\"","]"}],";","\n",RowBox[{"Return","[","]"}]}]}],"]"}],";","\n",RowBox[
+{"i","=","1"}],";","\n",RowBox[{"While","[",RowBox[{RowBox[{"i","\[LessEqual]","n"}],",","\n",RowBox[
+{RowBox[{"p2"," ","="," ",RowBox[{"N","[",RowBox[{"p1","-",RowBox[{"(",RowBox[{RowBox[
+{"(",RowBox[{"p1","-","p0"}],")"}],"*",RowBox[{RowBox[{"f","[","p1","]"}],"/",RowBox[
+{"(",RowBox[{RowBox[{"f","[","p1","]"}],"-",RowBox[{"f","[","p0","]"}]}],")"}]}]}],")"}]}],"]"}]}],";","\n",RowBox[
+{"Print","[",RowBox[{"i",","," ","\"        \"",","," ","p0"," ",","," ","\"        \""," ",","," ","p1"}],"]"}],";","\n",RowBox[
+{"i","++"}],";","\n",RowBox[{"p0","=",RowBox[{RowBox[{"p1","\n","p1"}],"=","p2"}]}]}]}],"]"}]}]}],"]"}]}],";"}],"\n",RowBox[
+{"Print","[",RowBox[{"\" Root=\""," ",",","p2"}],"]"}],"\n",RowBox[{RowBox[{RowBox[
+{"f","[","x_","]"}]," ",":=",RowBox[{RowBox[{"x","^","3"}]," ","+",RowBox[{"x","^","2"}],"-",RowBox[
+{"3","x"}],"-","3"}]}],";"}],"\n",RowBox[{"plot","[",RowBox[{RowBox[{"f","[","x","]"}]," ",",",RowBox[
+{"{",RowBox[{"x"," ",",","  ",RowBox[{"-","3"}]," ",","," ","3"}],"}"}]}],"]"}]}],
+"Input",ExpressionUUID -> "99b2a1b9-2fbb-4cf7-a4a5-a6ce986717cb"]},Open],ExpressionUUID -> "6b7904f1-f455-492e-afaf-97e79c917b7e"],Cell[
+CellGroupData[
+{Cell[
+TextData[{"Practical"," ","3",":"}],"Section",ExpressionUUID -> "ac64a96d-0b68-4abd-89f7-3e4fe36a5b75"],Cell[
+BoxData[
+{RowBox[{RowBox[{RowBox[{"secant","[",RowBox[{"f_",","," ","ao_"," ",",","bo_"," ",","," ","n_"}]," ","]"}],":="," ",RowBox[
+{"Module","[",RowBox[{RowBox[{"{","}"}],",",RowBox[{RowBox[{"p0","=",RowBox[{"N","[","ao","]"}]}],";","\n",RowBox[
+{"p1","=",RowBox[{"N","[","bo","]"}]}],";","\n",RowBox[{"If","[",RowBox[{RowBox[{RowBox[
+{RowBox[{"f","[","p0","]"}],"*",RowBox[{"f","[","p1","]"}]}],">","0"}],","," ",RowBox[
+{RowBox[{"Print","[","\"Secant Method can not applied\"","]"}],";","\n",RowBox[{"Return","[","]"}]}]}],"]"}],";","\n",RowBox[
+{"i","=","1"}],";","\n",RowBox[{"While","[",RowBox[{RowBox[{"i","\[LessEqual]","n"}],",","\n",RowBox[
+{RowBox[{"p2"," ","="," ",RowBox[{"N","[",RowBox[{"p1","-",RowBox[{"(",RowBox[{RowBox[
+{"(",RowBox[{"p1","-","p0"}],")"}],"*",RowBox[{RowBox[{"f","[","p1","]"}],"/",RowBox[
+{"(",RowBox[{RowBox[{"f","[","p1","]"}],"-",RowBox[{"f","[","p0","]"}]}],")"}]}]}],")"}]}],"]"}]}],";","\n",RowBox[
+{"Print","[",RowBox[{"i",","," ","\"        \"",","," ","p0"," ",","," ","\"        \""," ",","," ","p1"}],"]"}],";","\n",RowBox[
+{"i","++"}],";","\n",RowBox[{"p0","=",RowBox[{RowBox[{"p1","\n","p1"}],"=","p2"}]}]}]}],"]"}]}]}],"]"}]}],";"}],"\n",RowBox[
+{"Print","[",RowBox[{"\" Root=\""," ",",","p2"}],"]"}],"\n",RowBox[{RowBox[{RowBox[
+{"f","[","x_","]"}]," ",":=",RowBox[{RowBox[{"x","^","3"}]," ","+",RowBox[{"x","^","2"}],"-",RowBox[
+{"3","x"}],"-","3"}]}],";"}],"\n",RowBox[{"plot","[",RowBox[{RowBox[{"f","[","x","]"}]," ",",",RowBox[
+{"{",RowBox[{"x"," ",","," ",RowBox[{"-","3"}]," ",","," ","3"}],"}"}]}],"]"}]}],
+"Input",ExpressionUUID -> "4d19b4a3-a7d8-40c1-8a66-3bb62838066d"]},Open],ExpressionUUID -> "896be6ab-cf2d-4f9d-bd1d-daec91e261ed"]},
+Open],ExpressionUUID -> "f166459f-d847-426a-805d-63fca198ccb3"]},StyleDefinitions -> "Default.nb",
+FrontEndVersion -> "13. for Wolfram Cloud 1.61.2 (January 4, 2022)"]
