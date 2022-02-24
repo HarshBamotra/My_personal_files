@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+      <a href="https://www.andcollege.du.ac.in/"><img src="andclogo.png" alt=""></a>
+      <ul class="main-nav">
+          <li><a href="#header">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#project">Project</a></li>
+          <li><a href="#contact">Contact</a></li>
+      </ul>
+	</header> 
+
+	<div id="about">
+        <h4>About</h4>
+		<img src="harsh.jpg" alt="Harsh">
+        <h3>Harsh Bamotra</h3>
+        <p>
+            BSc. (H) Computer Science <br>
+            Semeter IV <br>
+            @ws-226
+        </p>
+	</div>
+
+    <br><br>
+
+    <div id="project">
+        <h2><u>Project</u></h2>
+        <h4><u>Program to find GCD of two numbers</u></h4>
+        <p> <br> GCD(Greatest common divisor) of two number 
+        is the lagrest number that divides both of them. <br><br> 60 = 2 X 2 X 3 X 5 <br>
+        36 = 2 X 2 X 3 X 5 <br><br> GCD = Product of common factors <br> GCD = 2 X 2 X 3 = 12
+        <br><br> The simplest way is to find the prime factors of the two numbers then multipy the
+        common prime factors. <br><br> Another way is to apply <a target="_blank" href="https://en.wikipedia.org/wiki/Euclidean_algorithm"> 
+        Euclidean algorithm </a> which is the main algorithm used for this purpose. <br>
+        The idea is, GCD of two numbers doesn’t change if smaller 
+        number is subtracted from a bigger number. <br> And we are going to use this algorithm.</p>
+
+        <br><br>
+
+        <b><u>Using recursion</u></b>
+        <br><br>
+        <div class="code_box">
+            <button onclick="copy()">Copy</button>
+            <pre>
+    //Harsh Bamotra
+    //Program to calculate GCD of two numbers using recursion
+                
+    #include &lt;iostream&gt;
+    using namespace std;
+                
+    //defining fuction to calculate GCD
+    int recur_GCD(int n1 , int n2)
+        {
+            if(n1==0 || n2==0)     //checking if one of the number is 0
+                return 0;
+                
+            else if(n1==n2)    //if n1 is equal to n2 exit case 
+                return n1;
+                
+            else if(n1>n2)             		//checking if n1 is greater than n2
+                return recur_GCD(n1-n2 , n2);
+                
+            else                          //if n2 is greater than n1
+                return recur_GCD(n1 , n2-n1);
+        }
+                
+    int main()
+        {
+            cout << "***** Calculate GCD of two numbers *****" << endl;
+            int n1 , n2;                              //defining variables
+            cout << "Enter the first number::";
+            cin >> n1;                              //taking first number
+            cout << "Enter the second number::";
+            cin >> n2;                             //taking second number
+                
+            cout << "The GCD of the two number::" << recur_GCD(n1 , n2);   //printing the final result
+            return 0;
+        }
+            </pre>
+        </div>
+        <b><u>Output</u></b>
+        <div class="output_box">
+            <pre>
+    ***** Calculate GCD of two numbers *****
+    Enter the first number::36
+    Enter the second number::60
+    The GCD of the two number::12
+            </pre>
+        </div>
+
+        <br><br>
+
+        <b><u>Without using recursion</u></b>
+        <br><br>
+        <div class="code_box">
+            <button>Copy</button>
+            <pre>
+    //Harsh Bamotra
+    //Program to calculate GCD of two numbers without using recursion
+                
+    #include &lt;iostream&gt;
+    using namespace std;
+
+    // Function to calculate GCD
+    int GCD(int x, int y)
+        {
+	        // Minimum of the two numbers
+	        int minimum = min(x, y);
+
+	        if (x % minimum == 0 && y % minimum == 0)
+		        return minimum;
+
+	        for (int i = minimum / 2; i >= 2; i--) 
+                {
+		            if (x % i == 0 && y % i == 0)
+			            return i;
+	            }
+	        return 1;
+        }
+
+    int main()
+        {
+            cout << "***** Calculate GCD of two numbers *****" << endl;
+            int n1 , n2;                              //defining variables
+            cout << "Enter the first number::";
+            cin >> n1;                              //taking first number
+            cout << "Enter the second number::";
+            cin >> n2;                             //taking second number
+                
+            cout << "The GCD of the two number::" << GCD(n1 , n2);   //printing the final result
+            return 0;
+        }
+            </pre>
+        </div>
+        <b><u>Output</u></b><br>
+        <div class="output_box">
+            <pre>
+    ***** Calculate GCD of two numbers *****
+    Enter the first number::36
+    Enter the second number::60
+    The GCD of the two number::12
+            </pre>
+        </div>
+        <br><br><br><br>
+    </div>
+
+    <br><br><br>
+
+    <footer id="contact">
+        <h3 style="text-align: center;">Contact</h3>
+        <a href="#">V-Labs</a>
+        <p>All Copyright © Reserved</p>
+    </footer>
+
+
+    <script>
+        function copy() {
+          var copyText = document.getElementById("Input");
+        
+          copyText.select();
+          copyText.setSelectionRange(0, 99999); 
+        
+          navigator.clipboard.writeText(copyText.value);
+          
+          document.alert("Text Copied Succesfully !!");
+        }
+        </script>
+</body>
+</html>
