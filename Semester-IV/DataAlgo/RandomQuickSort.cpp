@@ -15,9 +15,9 @@ int partition(T arr[] , int p , int r)
 
 	for(int j=p ; j<r ; j++)
 		{
+			count++;
 			if(arr[j]<=x)
 				{
-					count++;
 					i++;
 					swap(arr[i] , arr[j]);
 				}
