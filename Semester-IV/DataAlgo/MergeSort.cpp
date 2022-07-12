@@ -16,7 +16,7 @@ int merge(T arr[], int p, int q, int r)
     		for (int i = 0; i < n1; i++)
         		L[i] = arr[p + i];
     		for (int j = 0; j < n2; j++)
-        		M[j] = arr[q + 1 + j];
+        		M[j] = arr[q + j+1];
 
     		int i, j, k;
     		i = 0;
