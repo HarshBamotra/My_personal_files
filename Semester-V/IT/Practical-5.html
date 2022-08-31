@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>IT Practical-5</title>
+    <style>
+	.button {
+  		background-color: grey;
+  		border: none;
+  		color: white;
+  		padding: 15px 32px;
+  		text-align: center;
+  		text-decoration: none;
+  		display: inline-block;
+  		font-size: 16px;
+  		margin: 4px 2px;
+  		cursor: pointer;
+		width: 150px;
+	}
+
+	html {
+    		display: table;
+    		margin: auto;
+	}
+
+	body {
+    		display: table-cell;
+    		vertical-align: middle;
+	}
+    </style>
+</head>
+<body>
+    <h1>Program to change the style of text</h1>
+        <p id="paragraph">
+            You can decide what you want to do in life 
+            but I suggest doing something <br> that creates. 
+            Something that leaves a tangible thing once 
+            you're done. That <br> way even after you're gone,
+            you will still live on in the things you created.
+        </p>
+
+    <table>
+	<tr>
+	   <th>Colors</th>
+	   <th>Size</th>
+   	   <th>Font</th>
+	</tr>
+        <tr>
+        <td><button style = "background-color: red;" class="button" onclick="document.getElementById('paragraph').style.color='Red'">Red</button></td>
+	    <td><button class="button" onclick="document.getElementById('paragraph').style.fontSize='10px'">10</button></td>
+	    <td><button class="button" onclick="document.getElementById('paragraph').style.fontFamily='Arial'">Arial</button></td>
+        </tr>
+
+        <tr>
+        <td><button style = "background-color: green;" class="button" onclick="document.getElementById('paragraph').style.color='Green'">Green</button></td>
+        <td><button class="button" onclick="document.getElementById('paragraph').style.fontSize='20px'">20</button></td>
+	    <td><button class="button" onclick="document.getElementById('paragraph').style.fontFamily='Monospace'">Monospace</button></td>    
+        </tr>
+
+        <tr>
+	    <td><button style = "background-color: blue;" class="button" onclick="document.getElementById('paragraph').style.color='Blue'">Blue</button></td>
+        <td><button class="button" onclick="document.getElementById('paragraph').style.fontSize='30px'">30</button></td>
+        <td><button class="button" onclick="document.getElementById('paragraph').style.fontFamily='times'">Times</button></td>
+        </tr>
+    </table>
+</body>
+</html>

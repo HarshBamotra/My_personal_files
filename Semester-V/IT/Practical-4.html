@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>IT Practical-4</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+
+        #space{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Program to print table from 2 to 10 after every 5 second</h1>
+    <div id="space"></div>
+    <script>
+        const space = document.getElementById("space");
+        function table(x){
+            var result = "";
+            for(var i=1; i<=10; i++){
+                result+= String(x*i) + " ";
+            }
+            result += "\n";
+            return result;
+        }
+
+        var i = 1;
+        const colors = ['black', 'red', 'green', 'aqua', 'blue', 'orange', 'purple', 'pink', 'brown'];
+        function GiveTables(){
+            if(i == 10)
+                clearInterval(interval);
+            else
+                {
+                    i+=1;
+                    const para = document.createElement("p");
+                    para.innerText = table(i);
+                    para.style.fontSize = String(12+i*2) + 'px';
+                    para.style.padding = '2px';
+                    para.style.color = colors[i-2];
+                    document.getElementById('space').appendChild(para);
+                }
+        }
+        const interval = setInterval(GiveTables, 5000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form</title>
+    <style>
+        body{
+            background-image: url('pets.jpg');
+            background-size: cover;
+            background-position: center;
+            color: rgb(0, 0, 0);
+            text-align: justify;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #form{
+            background-color: #dddddd70;
+            text-align: justify;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function Data(){
+           let name = document.querySelector("#name").value;
+           let age = document.querySelector("#age").value;
+           let breed = document.querySelector("#breed").value;
+           let weight = document.querySelector("#weight").value;
+           let likes = document.querySelector("#likes").value;
+        
+           var object = {
+               Name : name,
+               Age : age,
+               Breed : breed,
+               Weight : weight,
+               Likes_most : likes
+           }
+
+           var myj = JSON.stringify(object);
+           console.log(myj)
+           document.write("Object into json :" + myj)
+        }
+   </script>
+   
+    <h1>Form</h1>
+    <div id="form">
+    <p>Please enter your details carefully.</p>
+
+    <form>
+        <legend>Pet Form</legend>
+        <br><label for="name">Name</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input type="text" name="name" id="name" required><br>
+
+        <br><label for="Age">Age</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
+        <input type="number" name="age" id="age" required><br>
+
+        <br><label for="Breed">Type</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input type="text" name="breed" id="breed" required><br>
+
+        <br><label for="Weight">Weight</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input type="number" name="Weight" id="weight" required><br>
+
+        <br><label for="likes">What it likes most ??</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input type="text" name="likes" id="likes" required><br>
+
+        <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input type="reset" value="Reset" class="buttons">
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input type="submit" value="Submit" class="buttons" onclick="Data()">    
+    </form>
+    </div>
+</body>
+</html>
