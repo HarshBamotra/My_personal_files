@@ -1,0 +1,98 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&family=Ubuntu:wght@300&display=swap'); */
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("bg3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+input{
+    padding: 10px;
+    border: 0px solid black;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#depart{
+    padding: 10px;
+    width: 280px;
+    border: 0px solid black;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#text{
+    border: 0px solid black;
+    border-radius: 5px;
+    margin: 10px;
+    resize: none;
+}
+
+#form{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    width: 100px;
+    background-color: #ffffff;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: auto;
+}
+
+#button{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* #form *{
+    border: 2px solid black;
+} */
+
+.alert{
+    display: flex;
+    flex-direction: column;
+}
+
+.alertlbl{
+    color: red;
+    font-size: x-small;
+}
+
+#wrapper{
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #ffffff20;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 0px solid black;
+    border-radius: 5px;
+}
+
+.single {
+    grid-column: 1 / span 2;
+}
+
+#gender{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+label{
+    padding: 5px;
+}

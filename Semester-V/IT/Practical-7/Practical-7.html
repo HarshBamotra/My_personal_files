@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruitment Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<h2 style="font-family: 'Silkscreen', cursive; color: #ffffff">Start Your Journey at WeFooLs</h2><br>
+<div id="wrapper">
+    <form action="" id="form">
+        <label for="name" class="single">Name</label>
+        <input type="text" name="fname" placeholder="First Name" required>
+        <input type="text" name="lname" placeholder="Last Name" required>
+
+        <label for="age">Age</label>
+        <label for="gender">Gender</label>
+        <div class="alert">
+            <input type="number" placeholder="Enter your age" id="age">
+            <label for="alert" id="agelbl" class="alertlbl"></label>
+        </div>
+        <div id="gender">
+            <label for="name">Male</label>
+            <input type="radio" name="gender" value="male">
+            <label for="female">Female</label>
+            <input type="radio" name="gender" value="female">
+            <label for="other">Other</label>
+            <input type="radio" name="gender" value="other">
+        </div>
+
+        <label for="contact">Contact</label>
+        <label for="email">Email</label>
+        <div class="alert">
+            <input type="text" id='contact' placeholder="929292XXXX" required>
+            <label for="alert" id="contactlbl" class="alertlbl"></label>
+        </div>
+        <div class="alert">
+            <input type="text" id="email" placeholder="abc@xyz.com" required>
+            <label for="alert" id="emaillbl" class="alertlbl"></label>
+        </div>
+        
+        <label for="department">Department applying for</label>
+        <select name="depart" id="depart">
+            <option value="Human Resouce">Human Resouce</option>
+            <option value="Technical">Technical</option>
+            <option value="Management">Management</option>
+            <option value="Marketing">Marketing</option>
+        </select>
+
+        <label for="address">Address</label>
+        <textarea name="address" id="text" cols="30" rows="10"></textarea>
+
+        <div class="alert">
+            <label for="resume">Resume</label>
+            <label for="alert" id="resumelbl" class="alertlbl"></label>
+        </div>
+        <input type="file" id="resume">
+        <div class="single" id="button">
+            <input type="reset" value="Reset" class="btn">
+            <input type="submit" value="Submit" class="btn" onclick="return validate()">
+        </div>
+    </form>
+</div>
+</body>
+</html>
