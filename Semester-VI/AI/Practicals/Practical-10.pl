@@ -1,5 +1,5 @@
 start:-
-    write("Enter the first list :: "),nl,
+    write("Enter the list :: "),nl,
     read(L),nl,
     write("The list after reversal :: "),
     reverse(L, R),
